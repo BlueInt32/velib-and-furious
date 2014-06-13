@@ -83,24 +83,65 @@ html
   -ms-text-size-adjust: none;
 }
 
+body
+{
+	overflow: hidden;
+}
+
 .controls
 {
     position: absolute;
     bottom: 0;
     left:50%;
     
-    margin-left: -90px;
+    margin-left: -80px;
     
-    width: 180px;
-    height: 50px;
+    width: 160px;
+    height: 60px;
     
-    background: @red;
+    background: rgba(132, 132, 132, 0.5);
+	
     -webkit-border-top-left-radius: 5px;
     -webkit-border-top-right-radius: 5px;
     -moz-border-radius-topleft: 5px;
     -moz-border-radius-topright: 5px;
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+	
+	ul
+	{
+		display: block;
+		
+		margin: 0 auto;
+		
+		padding-top: 2.5px;
+		
+		width: 130px;
+		height: 100%;
+		
+		li
+		{
+			width: 55px;
+			height: 55px;
+
+			.borderradius(55);
+			cursor: pointer;
+			
+			&.velib
+			{
+				float: left;
+				
+				background: #46A6F9;
+			}
+			
+			&.stand
+			{
+				float: right;
+				
+				background: #710089;
+			}
+		}
+	}
 }
 // ------------------------------------------
 // ------------------------------------------
@@ -119,4 +160,15 @@ html
 {    
     width:auto;
     height:100vh;
+
+    .maplabel{
+         color: white;
+         background-color: red;
+         border-radius:3px;
+         padding:3px;
+         font-family: "Lucida Grande", "Arial", sans-serif;
+         font-size: 10px;
+         text-align: center;
+         white-space: nowrap;
+    }
 }
