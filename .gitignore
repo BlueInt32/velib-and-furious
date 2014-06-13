@@ -68,3 +68,4 @@ thumbs.db
 app/js/min.js
 *.sublime-workspace
 *.sublime-project
+node_server.js
