@@ -65,7 +65,18 @@ ehthumbs.db
 Icon?
 thumbs.db
 
-app/js/min.js
+######################
+# SUBLIME #
+######################
 *.sublime-workspace
 *.sublime-project
+
+######################
+# NODE #
+######################
 node_server.js
+
+######################
+# CSS #
+######################
+**/*.css
