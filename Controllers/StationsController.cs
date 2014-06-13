@@ -1,6 +1,7 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Configuration;
 using System.IO;
 using System.Linq;
 using System.Net;
@@ -14,7 +15,7 @@ namespace VelibAndFurious.Api.Controllers
 		public string GetStations()
 		{
 			WebClient client = new WebClient();
-			string apiResult = MakeRequest("https://api.jcdecaux.com/vls/v1/stations?apiKey=e5bc60b81a3a39b0d932e3d7a09cf07184ba8d29");
+			string apiResult = MakeRequest(ConfigurationManager.AppSettings["VelibApiPath"]);
 			apiResult = apiResult.Replace("\"", "'");
 
 			#region //Jsonreader
