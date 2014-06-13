@@ -1,61 +1,67 @@
-﻿<!DOCTYPE HTML>
+﻿<!DOCTYPE html>
 <html ng-app="velibAndFurious">
-
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-    <meta name="robots" content="NOINDEX, NOFOLLOW">
-    <title>Velib & Furious</title>
-    <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.js"></script>
-    <script type="text/javascript" src="js/app.js"></script>
-    <script type="text/javascript" src="js/controllers/stationCtrl.js"></script>
-    <script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3uh6VmGXUWzYF8wWn2zxxp4zmbA-4Jx0"></script>
-    <script type="text/javascript">
-      function initialize() {
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+	<meta name="robots" content="NOINDEX, NOFOLLOW">
+	<title>Velib & Furious</title>
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.17/angular.js"></script>
 
-        var latlng = new google.maps.LatLng(-25.363882,131.044922);
-        var mapOptions = {
-          center: latlng,
-          zoom: 8
-        };
-        var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
+	<script type="text/javascript" src="js/app.js"></script>
+	<script type="text/javascript" src="js/controllers/stationCtrl.js"></script>
+	<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyB3uh6VmGXUWzYF8wWn2zxxp4zmbA-4Jx0"></script>
+	<script src="js/markerwithlabel.js" type="text/javascript"></script>
+	<script type="text/javascript">
+		function initialize()
+		{
 
-        var marker = new google.maps.Marker({
-            position: latlng,
-            map: map,
-            title:"Hello World!",
-            icon: 'img/bike9.svg'
-        });
+			var latlng = new google.maps.LatLng(-34.397, 151.244);
+			var mapOptions = {
+				center: latlng,
+				zoom: 8
+			};
+			var map = new google.maps.Map(document.getElementById("map-canvas"), mapOptions);
 
-        var infoContent = '<div id="content">'+
-            '<h1 id="firstHeading" class="firstHeading">Station Velib</h1>'+
-            '<div id="bodyContent">'+
-            '<ul><li>12 vélibs</li><li>4 emplacements libres</li></ul>'+
-            '</div>';
-        var infowindow = new google.maps.InfoWindow({
-            content: infoContent
-        });
-        google.maps.event.addListener(marker, 'click', function() {
-            infowindow.open(map,marker);
-        });
+			var marker = new MarkerWithLabel({
+				position: latlng,
+				map: map,
+				//title:"Hello World!",
+				icon: 'img/bike9.svg',
+				labelContent: "furious", // your number
+				labelAnchor: new google.maps.Point(3, 30),
+				labelClass: "maplabel", // the CSS class for the label
+				labelInBackground: false,
+				draggable: true,
+				raiseOnDrag: true
 
-      }
-      google.maps.event.addDomListener(window, 'load', initialize);
+			});
 
-    </script>
+			var infoContent = '<div id="content">' +
+				'<h1 id="firstHeading" class="firstHeading">Station Velib</h1>' +
+				'<div id="bodyContent">' +
+				'<ul><li>12 vélibs</li><li>4 emplacements libres</li></ul>' +
+				'</div>';
+			var infowindow = new google.maps.InfoWindow({
+				content: infoContent
+			});
+			//google.maps.event.addListener(marker, 'click', function() {
+			//    infowindow.open(map,marker);
+			//});
 
-    <link rel="stylesheet" type="text/css" href="css/style.css" media="all">
-    <!--[if lt IE 9]> <script src="js/html5ForIE.js"></script> <![endif]-->
+		}
+		google.maps.event.addDomListener(window, 'load', initialize);
+
+	</script>
+	<link rel="stylesheet" type="text/css" href="css/style.css" media="all">
+	<!--[if lt IE 9]> <script src="js/html5ForIE.js"></script> <![endif]-->
 </head>
-
 <body ontouchstart="">
-    <!-- ontouchstart permet d'activer le :active en CSS sur mobile -->
-    <div class="container">
-        <div class="map-canvas" id="map-canvas"/>
-        <div class="clear"></div>
-    </div>
-    <!-- container -->
-    <script type="text/javascript"></script>
+	<!-- ontouchstart permet d'activer le :active en CSS sur mobile -->
+	<div class="container">
+		<div class="map-canvas" id="map-canvas" />
+		<div class="clear"></div>
+	</div>
+	<!-- container -->
+	<script type="text/javascript"></script>
 </body>
-
 </html>

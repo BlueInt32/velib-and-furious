@@ -139,6 +139,7 @@
     <Content Include="js\controllers\stationCtrl.js" />
     <Content Include="js\html5ForIE.js" />
     <Content Include="js\main.js" />
+    <Content Include="js\markerwithlabel.js" />
     <Content Include="Web.config" />
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
