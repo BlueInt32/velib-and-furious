@@ -83,15 +83,40 @@ html
   -ms-text-size-adjust: none;
 }
 
-
-body,
-.container
+.controls
 {
-  background:@white;
+    position: absolute;
+    bottom: 0;
+    left:50%;
+    
+    margin-left: -90px;
+    
+    width: 180px;
+    height: 50px;
+    
+    background: @red;
+    -webkit-border-top-left-radius: 5px;
+    -webkit-border-top-right-radius: 5px;
+    -moz-border-radius-topleft: 5px;
+    -moz-border-radius-topright: 5px;
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+}
+// ------------------------------------------
+// ------------------------------------------
+//  /$$      /$$  /$$$$$$  /$$$$$$$   /$$$$$$ 
+// | $$$    /$$$ /$$__  $$| $$__  $$ /$$__  $$
+// | $$$$  /$$$$| $$  \ $$| $$  \ $$| $$  \__/
+// | $$ $$/$$ $$| $$$$$$$$| $$$$$$$/|  $$$$$$ 
+// | $$  $$$| $$| $$__  $$| $$____/  \____  $$
+// | $$\  $ | $$| $$  | $$| $$       /$$  \ $$
+// | $$ \/  | $$| $$  | $$| $$      |  $$$$$$/
+// |__/     |__/|__/  |__/|__/       \______/ 
+// ------------------------------------------
+// ------------------------------------------
 
-  .map-canvas
-  {
-    height:800px;
-    width:800px;
-  }
+.map-canvas
+{    
+    width:auto;
+    height:100vh;
 }
